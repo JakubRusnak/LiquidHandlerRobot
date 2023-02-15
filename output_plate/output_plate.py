@@ -41,3 +41,31 @@ for row in range(len(reagents_2_mM)):
         output_plate[row].append(Well(reagents_1_mM[col], reagents_2_mM[row], col_index[col], row_index[row]))
 
 print(output_plate)
+
+df = pd.DataFrame(output_plate, columns=[col_index], index=[row_index])
+print(df)
+
+Well_index = []
+for r in range(len(row_index)):
+    for c in range(len(col_index)):
+        Well_index.append(row_index[r] + str(col_index[c]))
+# print(Well_index)
+
+reagent_1 = []
+for r in range(len(row_index)):
+    for c in range(len(col_index)):
+        reagent_1.append(reagents_1_mM[c])
+# print(reagent_1)
+
+reagent_2 = []
+for r in range(len(row_index)):
+    for c in range(len(col_index)):
+        reagent_2.append(reagents_2_mM[r])
+# print(reagent_2)
+
+df2 = pd.DataFrame()
+df2['Well_ID'] = Well_index
+df2['conc_reagents_1'] = reagent_1
+df2['conc_reagents_2'] = reagent_2
+
+print(df2)
