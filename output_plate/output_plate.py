@@ -1,4 +1,5 @@
 # custom class
+import pandas as pd
 class Well:
     def __init__(self, reagent_1_mM, reagent_2_mM, column_no, row_no):
         self.reagent_1_mM = reagent_1_mM
