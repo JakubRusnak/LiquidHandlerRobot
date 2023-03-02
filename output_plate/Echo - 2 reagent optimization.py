@@ -185,7 +185,7 @@ print(df3)
 
 
 """csv export"""
-df3.to_csv('TargetedMixSamples', float_format='%.3f', header=False)
+df3.to_csv('TargetedMixSamples.csv', float_format='%.3f', header=False)
 
 
 # In[ ]:
